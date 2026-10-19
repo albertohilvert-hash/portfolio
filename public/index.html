@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alberto Hilvert – ICT-Support und Betreuung</title>
+<meta name="description" content="Alberto Hilvert, Fachmann Betreuung EFZ und ICT Professional SIZ. Rund 15 Jahre Erfahrung im Umgang mit Menschen, jetzt im ICT-Support. Stallikon ZH.">
+<meta name="theme-color" content="#F2F4F3">
+<meta property="og:title" content="Alberto Hilvert – ICT-Support und Betreuung">
+<meta property="og:description" content="Von der Betreuung in den ICT-Support: zuhören, verstehen, Lösungen finden.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2317212B'/%3E%3Cpath d='M0 52h32v12H0z' fill='%233F7652'/%3E%3Cpath d='M32 52h32v12H32z' fill='%232B5BD7'/%3E%3Ctext x='32' y='40' font-family='Arial' font-weight='700' font-size='26' text-anchor='middle' fill='%23fff'%3EAH%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fog:#F2F4F3; --paper:#FFFFFF; --ink:#17212B; --muted:#4A5663; --line:#D3DAD7;
+  --birch:#3F7652; --birch-tint:#DCE9E0; --birch-ink:#25492F;
+  --signal:#2B5BD7; --signal-tint:#DCE5FA; --signal-ink:#1B3A8F;
+  --display:"Bricolage Grotesque","Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --text:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{margin:0;background:var(--fog);color:var(--ink);font:400 1.0625rem/1.6 var(--text);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius:2px}
+.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+.skip{position:absolute;left:-999px}
+.skip:focus{left:1rem;top:1rem;background:var(--paper);padding:.5rem .8rem;z-index:10}
+
+/* Kopfzeile */
+.top{position:sticky;top:0;z-index:5;background:rgba(242,244,243,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:3.5rem}
+.mark{font:700 1.05rem var(--display);text-decoration:none;letter-spacing:-.01em}
+.top nav{display:flex;gap:1.4rem;font-size:.95rem}
+.top nav a{text-decoration:none;color:var(--muted);padding:.3rem 0;border-bottom:2px solid transparent}
+.top nav a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+
+/* Allgemeine Abschnitte */
+.s{padding-block:clamp(3rem,7vw,5.5rem)}
+.s + .s{border-top:1px solid var(--line)}
+h1,h2,h3,h4{font-family:var(--display);line-height:1.12;margin:0;letter-spacing:-.015em}
+h2{font-size:clamp(1.8rem,3.6vw,2.5rem);font-weight:700;max-width:22ch}
+.intro{color:var(--muted);max-width:56ch;margin:.9rem 0 0}
+
+/* Hero */
+.hero{padding-block:clamp(2.5rem,6vw,5rem) clamp(2.5rem,5vw,4rem)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:clamp(2rem,6vw,5rem);align-items:center}
+h1{font-size:clamp(2.8rem,7vw,5rem);font-weight:700;letter-spacing:-.03em;line-height:1}
+.role{font:500 clamp(1.15rem,2.2vw,1.45rem)/1.35 var(--display);margin:1.1rem 0 0;color:var(--muted)}
+.lead{font-size:1.2rem;line-height:1.55;max-width:34rem;margin:1.6rem 0 0}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.btn{display:inline-block;padding:.8rem 1.35rem;border-radius:6px;font-weight:600;text-decoration:none;font-size:1rem;border:2px solid var(--ink)}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.btn.solid:hover{background:var(--signal);border-color:var(--signal)}
+.btn.line:hover{background:var(--ink);color:var(--paper)}
+.avail{margin:1.4rem 0 0;color:var(--muted);font-size:.95rem}
+.portrait{margin:0;aspect-ratio:4/5;position:relative;background:#DCE3E0;border-radius:6px 6px 0 0;overflow:hidden;display:grid;place-items:center}
+.portrait::after{content:"";position:absolute;inset:auto 0 0 0;height:8px;background:linear-gradient(90deg,var(--birch) 50%,var(--signal) 50%)}
+.portrait .mono{font:700 clamp(4rem,11vw,7rem) var(--display);color:#9AA8A2;letter-spacing:-.04em}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* Zeitleiste */
+.tl-scroll{overflow-x:auto;margin-top:2.2rem;padding-bottom:2rem}
+.tl{min-width:760px;display:grid;grid-template-columns:7rem 1fr;position:relative}
+.tl .axis{grid-column:2;position:relative;height:1.6rem;font-size:.8rem;color:var(--muted)}
+.tl .axis span{position:absolute;top:0;left:var(--l);transform:translateX(-50%)}
+.grp{display:contents}
+.grp .gl{align-self:start;padding-top:.55rem;font:700 1rem var(--display);padding-right:.8rem}
+.grp.b .gl{color:var(--birch)}
+.grp.i .gl{color:var(--signal)}
+.rows{position:relative;padding:.4rem 0;background:repeating-linear-gradient(to right,var(--line) 0 1px,transparent 1px 18.75%)}
+.grp + .grp .gl,.grp + .grp .rows{margin-top:.8rem}
+.row{position:relative;height:2.15rem;margin:.25rem 0}
+.bar{position:absolute;left:var(--l);width:var(--w);top:0;height:1.9rem;line-height:1.9rem;padding:0 .6rem;font-size:.78rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border-radius:4px;color:#fff;clip-path:inset(0 100% 0 0);animation:draw .9s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:var(--d,0s)}
+.b .bar{background:var(--birch)}
+.i .bar{background:var(--signal)}
+.b .bar.soft{background:var(--birch-tint);color:var(--birch-ink)}
+.i .bar.soft{background:var(--signal-tint);color:var(--signal-ink)}
+.bar.next{background:transparent;border:2px dashed var(--signal);padding:0}
+.note{position:absolute;right:calc(100% - var(--l) + .55rem);top:0;line-height:1.9rem;font-size:.78rem;font-weight:600;color:var(--signal-ink);white-space:nowrap}
+.dia{position:absolute;left:var(--l);top:.5rem;width:.95rem;height:.95rem;background:var(--signal);transform:translateX(-50%) rotate(45deg)}
+.now{position:absolute;left:var(--l);top:-6.2rem;bottom:0;width:2px;background:var(--ink)}
+.now b{position:absolute;bottom:-1.5rem;right:-.2rem;font-size:.78rem;font-weight:600;white-space:nowrap}
+.legend{margin:.6rem 0 0;font-size:.88rem;color:var(--muted);max-width:60ch}
+@keyframes draw{to{clip-path:inset(0 0 0 0)}}
+
+/* Stationen */
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(2rem,5vw,4rem);margin-top:2.4rem}
+.col h3{font-size:1.5rem;padding-bottom:.8rem;border-bottom:4px solid var(--c)}
+.col.i{--c:var(--signal)}
+.col.b{--c:var(--birch)}
+.st{display:grid;grid-template-columns:6.2rem 1fr;gap:1rem;padding:1.3rem 0;border-bottom:1px solid var(--line)}
+.st dt{font-size:.88rem;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:.2rem}
+.st dd{margin:0}
+.st h4{font-size:1.12rem;font-weight:700}
+.org{margin:.15rem 0 .5rem;font-weight:500;color:var(--muted);font-size:.95rem}
+.st p:last-child{margin:0;font-size:.98rem}
+.dl{margin:0}
+
+/* Fähigkeiten */
+.skills{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:2.4rem}
+.skills section{padding:0 1.4rem;border-left:1px solid var(--line)}
+.skills section:first-child{padding-left:0;border-left:0}
+.skills h3{font-size:1.1rem;margin-bottom:.9rem}
+.skills .bt{color:var(--birch)}
+.skills ul{list-style:none;margin:0;padding:0;font-size:.98rem}
+.skills li{padding:.32rem 0}
+
+/* Projekt und Zeugnisse */
+.two{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(2rem,6vw,5rem)}
+.proj h3{font-size:1.5rem;margin-bottom:.6rem}
+.proj p{margin:.6rem 0;max-width:52ch}
+.facts{list-style:none;margin:1.1rem 0 0;padding:0;border-top:1px solid var(--line)}
+.facts li{padding:.55rem 0;border-bottom:1px solid var(--line);font-size:.98rem}
+.facts b{font-weight:600;display:inline-block;min-width:7.5rem}
+.proj .demo{margin:1.4rem 0 .5rem}
+.demo-note{margin:0;font-size:.88rem;color:var(--muted)}
+.refs figure{margin:0;padding:0 0 1.4rem;border-bottom:1px solid var(--line)}
+.refs figure + figure{padding-top:1.4rem}
+.refs blockquote{margin:0;font:500 1.15rem/1.45 var(--display)}
+.refs figcaption{margin-top:.5rem;font-size:.88rem;color:var(--muted)}
+
+/* Kontakt */
+.contact{background:var(--ink);color:var(--paper);border-top:0 !important}
+.contact h2{max-width:none}
+.contact .intro{color:#B8C2CC}
+.mail{display:inline-block;margin-top:1.6rem;font:700 clamp(1.5rem,4.5vw,2.8rem) var(--display);letter-spacing:-.02em;text-decoration:none;border-bottom:4px solid var(--signal);padding-bottom:.1rem;overflow-wrap:anywhere}
+.mail:hover{border-bottom-color:#fff}
+.contact dl{display:grid;grid-template-columns:repeat(2,max-content);gap:.4rem 3rem;margin:2rem 0 0}
+.contact dt{color:#B8C2CC;font-size:.92rem}
+.contact dd{margin:0}
+.contact a{text-underline-offset:4px}
+.foot{padding:1.4rem 0;font-size:.88rem;color:var(--muted)}
+
+@media (max-width:900px){
+  .skills{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:2rem}
+  .skills section:nth-child(3){padding-left:0;border-left:0}
+  .two{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .hero .wrap{grid-template-columns:1fr}
+  .portrait{max-width:260px;order:-1}
+  .cols{grid-template-columns:1fr}
+  .top nav{gap:1rem;font-size:.88rem}
+}
+@media (max-width:520px){
+  .top nav a:nth-child(2){display:none}
+  .st{grid-template-columns:1fr;gap:.2rem}
+  .skills{grid-template-columns:1fr}
+  .skills section{padding:0;border-left:0}
+  .contact dl{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .bar{animation:none;clip-path:none}
+}
+@media print{
+  .top,.cta,.skip{display:none}
+  body{background:#fff}
+  .contact{background:#fff;color:#000}
+  .contact .intro,.contact dt{color:#333}
+  .bar{animation:none;clip-path:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#">Alberto Hilvert</a>
+    <nav aria-label="Hauptnavigation">
+      <a href="#werdegang">Werdegang</a>
+      <a href="#faehigkeiten">Fähigkeiten</a>
+      <a href="#projekt">Projekt</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inhalt">
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Alberto Hilvert</h1>
+      <p class="role">ICT-Support, zuvor Fachmann Betreuung EFZ</p>
+      <p class="lead">Rund 15 Jahre habe ich Menschen begleitet. Heute betreue ich Systeme, mit derselben Haltung: zuhören, verstehen und Lösungen finden.</p>
+      <div class="cta">
+        <a class="btn solid" href="mailto:alberto.hilvert@hotmail.com">E-Mail schreiben</a>
+        <a class="btn line" href="#werdegang">Werdegang ansehen</a>
+      </div>
+      <p class="avail">Stallikon ZH. Offen für eine neue Stelle im ICT-Support.</p>
+    </div>
+    <figure class="portrait">
+      <span class="mono" aria-hidden="true">AH</span>
+      <img src="portrait.jpg" alt="Porträt von Alberto Hilvert" width="480" height="600" onerror="this.remove()">
+    </figure>
+  </div>
+</section>
+
+<section class="s" id="werdegang">
+  <div class="wrap">
+    <h2>Zwei Laufbahnen, die sich überlappen</h2>
+    <p class="intro">Seit 2019 habe ich neben der Betreuung auch den IT-Support übernommen. 2025 folgte der Wechsel in die ICT.</p>
+
+    <div class="tl-scroll">
+      <div class="tl" role="img" aria-label="Zeitleiste 2011 bis 2026. Betreuung: Lehre 2011 bis 2014, Fachmann Betreuung 2014 bis 2019, Pädagogische Leitung 2019 bis 2025, Berufsbildner 2017 bis 2025. ICT: IT-Support neben der Betreuung 2019 bis 2025, SIZ-Diplom Oktober 2025, bexio AG September 2025 bis März 2026.">
+        <div class="axis" aria-hidden="true">
+          <span style="--l:0%">2011</span><span style="--l:18.75%">2014</span><span style="--l:37.5%">2017</span>
+          <span style="--l:56.25%">2020</span><span style="--l:75%">2023</span><span style="--l:93.75%">2026</span>
+        </div>
+
+        <div class="grp b" aria-hidden="true">
+          <div class="gl">Betreuung</div>
+          <div class="rows">
+            <div class="row">
+              <span class="bar soft" style="--l:0%;--w:18.75%;--d:.05s">Lehre</span>
+              <span class="bar" style="--l:18.75%;--w:35.4%;--d:.15s">Fachmann Betreuung EFZ</span>
+              <span class="bar" style="--l:54.17%;--w:37.5%;--d:.25s">Pädagogische Leitung</span>
+            </div>
+            <div class="row">
+              <span class="bar soft" style="--l:41.1%;--w:50%;--d:.3s">Berufsbildner Betreuung</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grp i" aria-hidden="true">
+          <div class="gl">ICT</div>
+          <div class="rows">
+            <div class="row">
+              <span class="bar soft" style="--l:54.17%;--w:37.5%;--d:.4s">IT-Support neben der Betreuung</span>
+            </div>
+            <div class="row">
+              <span class="note" style="--l:91.67%">bexio AG, 1st Level Support</span>
+              <span class="bar" style="--l:91.67%;--w:3.1%;--d:.55s"></span>
+              <span class="bar next" style="--l:94.8%;--w:5.2%;--d:.65s"></span>
+            </div>
+            <div class="row">
+              <span class="note" style="--l:92.2%">SIZ-Diplom, Okt 2025</span>
+              <span class="dia" style="--l:92.2%"></span>
+            </div>
+            <div class="now" style="--l:98.75%"><b>heute</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="legend">Helle Balken zeigen Ausbildung oder Aufgaben neben der Hauptstelle. Der gestrichelte Balken ist der nächste Schritt im ICT-Support.</p>
+
+    <div class="cols">
+      <div class="col i">
+        <h3>ICT-Support</h3>
+        <dl class="dl">
+          <div class="st">
+            <dt>Sep 2025 bis Mär 2026</dt>
+            <dd>
+              <h4>Junior 1st Level Supporter</h4>
+              <p class="org">bexio AG, Rapperswil-Jona</p>
+              <p>Technischer Support für KMU-Kunden zu Software, Buchhaltung und Auftragsverwaltung. Fehleranalyse per Telefon, E-Mail und Ticketsystem, Anfragen zu Abos und Rechnungsstellung.</p>
+            </dd>
+          </div>
+          <div class="st">
+            <dt>Okt 2025</dt>
+            <dd>
+              <h4>ICT Professional SIZ, Systems &amp; Network</h4>
+              <p class="org">Diplom</p>
+              <p>Betriebssysteme und ICT-Recht, Benutzerkonten und Backup, Netzwerktechnik und VPN, Serveradministration mit Active Directory und Hyper-V.</p>
+            </dd>
+          </div>
+          <div class="st">
+            <dt>2019 bis 2025</dt>
+            <dd>
+              <h4>IT-Support neben der Hauptaufgabe</h4>
+              <p class="org">Stadt Zürich</p>
+              <p>Behebung von Problemen mit PCs, Druckern und Netzwerk, System- und Softwareupdates, Einführung neuer Mitarbeitender in die digitale Infrastruktur.</p>
+            </dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="col b">
+        <h3>Betreuung</h3>
+        <dl class="dl">
+          <div class="st">
+            <dt>Sep 2019 bis Sep 2025</dt>
+            <dd>
+              <h4>Pädagogische Leitung</h4>
+              <p class="org">Stadt Zürich, Schule im Birch</p>
+              <p>Leitung und Organisation des Hortes, Teamführung, Zusammenarbeit mit Eltern, Lehrpersonen und Fachstellen, Begleitung von Kindern mit besonderem Förderbedarf.</p>
+            </dd>
+          </div>
+          <div class="st">
+            <dt>Aug 2017 bis Aug 2025</dt>
+            <dd>
+              <h4>Berufsbildner Fachmann/-frau Betreuung EFZ</h4>
+              <p class="org">Stadt Zürich</p>
+              <p>Ausbildung von fünf Lernenden im Bereich Betreuung: Lernziele planen und beurteilen, Entwicklung fördern.</p>
+            </dd>
+          </div>
+          <div class="st">
+            <dt>Jan 2014 bis Aug 2019</dt>
+            <dd>
+              <h4>Fachmann Betreuung EFZ</h4>
+              <p class="org">Verschiedene Einrichtungen, Kanton Zürich</p>
+              <p>Betreuung von Kindern und Jugendlichen, Freizeitangebote, Zusammenarbeit im Team.</p>
+            </dd>
+          </div>
+          <div class="st">
+            <dt>2011 bis 2019</dt>
+            <dd>
+              <h4>Lehre und Ausbilderschein</h4>
+              <p class="org">Eidg. Fähigkeitszeugnis 2014, Ausbilderschein 2019</p>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="faehigkeiten">
+  <div class="wrap">
+    <h2>Was ich mitbringe</h2>
+    <p class="intro">Technisches Fundament aus der SIZ-Ausbildung und dem Alltag im Support, dazu Erfahrung im Umgang mit Menschen.</p>
+    <div class="skills">
+      <section>
+        <h3>Server und Konten</h3>
+        <ul><li>Active Directory</li><li>Hyper-V</li><li>Backup-Strategien</li><li>Benutzerverwaltung</li></ul>
+      </section>
+      <section>
+        <h3>Netzwerk</h3>
+        <ul><li>DNS und DHCP</li><li>VLAN</li><li>VPN und Firewall</li></ul>
+      </section>
+      <section>
+        <h3>Arbeitsplatz und Support</h3>
+        <ul><li>Ticketsysteme</li><li>Microsoft 365</li><li>Google Workspace</li><li>PCs, Drucker, Updates</li></ul>
+      </section>
+      <section>
+        <h3 class="bt">Aus der Betreuung</h3>
+        <ul><li>Ruhig bleiben unter Druck</li><li>Gespräche mit Eltern und Fachstellen</li><li>Teams führen und koordinieren</li><li>Verständlich erklären</li></ul>
+      </section>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="projekt">
+  <div class="wrap two">
+    <div class="proj">
+      <h2>Eigenes Projekt: Courtside</h2>
+      <p>Eine Web-App für meine Arbeit als Trainer im Jugendbasketball. Ich habe sie mit KI-Unterstützung entwickelt und prüfe und teste jede Änderung selbst, bevor sie live geht.</p>
+      <ul class="facts">
+        <li><b>Funktionen</b> Taktikboard, Kader, Statistiken, Import von Spielberichten</li>
+        <li><b>Technik</b> JavaScript, Cloudflare (Workers, D1, R2)</li>
+        <li><b>Arbeitsweise</b> KI schlägt vor, ich entscheide und teste</li>
+      </ul>
+      <p class="demo"><a class="btn solid" href="https://courtside-demo.alberto-hamolsky.workers.dev/" target="_blank" rel="noopener">Demo ansehen</a></p>
+      <p class="demo-note">Die Demo läuft mit erfundenen Daten und ohne Login.</p>
+    </div>
+    <div class="refs">
+      <h2 style="font-size:1.5rem;margin-bottom:1.2rem">Aus Arbeitszeugnissen</h2>
+      <figure>
+        <blockquote>Verlässlicher, einfühlsamer Teamplayer, der auch in herausfordernden Momenten ruhig und klar bleibt.</blockquote>
+        <figcaption>Stadt Zürich, sinngemäss aus dem Arbeitszeugnis</figcaption>
+      </figure>
+      <figure>
+        <blockquote>Gewissenhaft, motiviert, offen in der Einarbeitung, höflich und lösungsorientiert in der Kommunikation.</blockquote>
+        <figcaption>bexio AG, sinngemäss aus dem Arbeitszeugnis</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="s contact" id="kontakt">
+  <div class="wrap">
+    <h2>Schreiben Sie mir</h2>
+    <p class="intro">Für ein Gespräch oder Fragen zu meinem Werdegang.</p>
+    <a class="mail" href="mailto:alberto.hilvert@hotmail.com">alberto.hilvert@hotmail.com</a>
+    <dl>
+      <dt>Telefon</dt><dd><a href="tel:+41797768343">079 776 83 43</a></dd>
+      <dt>Wohnort</dt><dd>Stallikon ZH</dd>
+    </dl>
+  </div>
+</section>
+
+</main>
+<footer class="foot"><div class="wrap">© 2026 Alberto Hilvert</div></footer>
+</body>
+</html>
